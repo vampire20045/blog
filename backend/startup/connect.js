@@ -17,7 +17,7 @@ const connect = async () => {
     try {
         const dbUrl = process.env.Uri ?? '';
         if (!dbUrl) {
-            throw new Error("Database URI is not defined in environment variables");
+            console.log("Database URI is not defined in environment variables");
         }
 
         const connection = await mongoose.connect(dbUrl);

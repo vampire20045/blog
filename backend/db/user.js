@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import BlogPost from "./Blog";
+import { BlogPost } from "./Blog.js"; // Corrected path
 
 const UserLogin = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
@@ -8,4 +8,5 @@ const UserLogin = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', UserLogin);
+
 export default User;

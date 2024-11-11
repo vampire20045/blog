@@ -72,5 +72,22 @@ router.get("/category", auth, async (req, res) => {
         res.status(400).json({ message: "Something went wrong", error: err.message });
     }
 });
+router.delete("/category/:categoryId",auth,async(req,res)=>{
+
+    const categoryId=req.params;
+    try{
+        const x=await Category.findByIdAndDelete(categoryId);
+        if(x){
+            res.status(200).json({message:"Category deleted successfully"});
+        }
+        else{
+            res.status(400).json({message:"Category not found"});}
+    }
+    catch(err){
+        console.error(err);
+        res.status(400).json({message:"Something went wrong",error:err.message});
+    }
+
+})
 
 export default router;

@@ -8,25 +8,23 @@ import ActionAreaCard  from './components/Card2';
 import AdminLogin from './AdminPage/AdminLogin';
 import AdminRegister from './AdminPage/AdminRegister';
 import AddCategory from './Pages/AddCategory';
+import LandingPage from './Pages/Landing';
 function App() {
   return (
     <>
-      < ResponsiveAppBar/>
       <Router>
+        <ResponsiveAppBar/>
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+          <Route path="/Signup" element={<Signup />} />
           <Route path="/category" element={<MediaCard/>}/>
-                <Route path="/category/blog" element={<ActionAreaCard/>}/>
-                <Route path="/AdminRegister" element={<AdminRegister/>}/>
-              <Route path="/AdminLogin" element={<AdminLogin/>}/>
-              <Route path="/AddCategory" element={<AddCategory/>}/>
-
-
-
-
-        </Routes>
-      </Router>
+          <Route path="/category/blog" element={<ActionAreaCard/>}/>
+          <Route path="/AdminRegister" element={<AdminRegister/>}/>
+          <Route path="/AdminLogin" element={<AdminLogin/>}/>
+          <Route path="/AddCategory" element={<AddCategory/>}/>
+          </Routes> 
+          </Router>
     </>
   );
 }

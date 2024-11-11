@@ -9,7 +9,8 @@ const BlogSchema=new mongoose.Schema({
   title:{type:String,required:true},
   dis:{type:String,required:true},
   link:{type:String},
-  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+  author:{type:String},
+  User: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 
 })
 const Blog=mongoose.model('Blog',BlogSchema);
